@@ -1,0 +1,22 @@
+@use '_variables';
+@use '../components/header/_header';
+@use '../components/slider/_slider';
+@use '../components/sidebar/_sidebar';
+@use '../components/mainContent/_mainContent';
+html{
+  font-size: 62.5%;
+}
+*{
+  font-family: variables.$mainFont;
+  font-weight: 400;
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  list-style: none;
+  background: variables.$base-color;
+}
+a{
+  text-decoration: none;
+  cursor: pointer;
+  color: inherit;
+}

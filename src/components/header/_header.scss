@@ -1,0 +1,73 @@
+@use '../../scss/_variables';
+@use '../../scss/_mixins';
+.header{
+  top: 0;
+  left: 0;
+  z-index: 10;
+  position: fixed;
+  width: 100%;
+  background: variables.$header-background;
+
+  .header-container{
+    height: 11.6rem;
+    font-size: 1rem;
+    max-width: 112rem;
+    margin: 0 auto;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+
+    .header__logo{
+      font-weight: 700;
+      font-size: 2.4rem;
+      color: variables.$logo-color
+    }
+
+    .menu__list{
+      display: flex;
+      gap: 40px;
+      .menu__link{
+        display: inline-block;
+        font-weight: 700;
+        color: variables.$menu-color;
+        //transition: text-shadow 0.3s;
+        transition: transform 0.1s ease, color 0.2s ease, text-shadow 0.2s ease;
+      }
+
+      .menu__link:focus, .menu__link:hover{
+        transform: scale(1.04);
+        color: variables.$menu-hover-focus-color;
+        //font-weight: 900;
+        text-shadow: 0 0 .6px variables.$menu-hover-focus-color;
+      }
+    }
+    .header-utilities{
+      display: flex;
+      gap: 40px;
+
+      .header-utilities__user-btn{
+        @include mixins.icon-button('../../public/img/svg/user.svg');
+      }
+      .header-utilities__search-btn{
+        @include mixins.icon-button('../../public/img/svg/search.svg');
+      }
+      .header-utilities__shop-bag{
+        position: relative;
+        display: inline-block;
+        @include mixins.icon-button('../../public/img/svg/shop-bag.svg');
+
+        .header-utilities__shop-bag--badge{
+          position: absolute;
+          top: 7px;
+          right: -2px;
+          background-color: red;
+          color: white;
+          border-radius: 50%;
+          width: 12px;
+          height: 12px;
+          font-size: 1rem;
+        }
+      }
+    }
+  }
+}

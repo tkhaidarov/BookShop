@@ -1,0 +1,12 @@
+header.header
+    .header-container
+        span.header__logo Bookshop
+        nav.menu
+            ul.menu__list
+                each i in [{link: "#", name: "BOOKS"},{link: "#", name: "AUDIOBOOKS"},{link: "#", name: "STATIONERY & GIFTS"},{link: "#", name: "BLOG"}]
+                  li
+                    a(href=i.link).menu__link=i.name
+        .header-utilities
+            button.header-utilities__user-btn
+            button.header-utilities__search-btn
+            button.header-utilities__shop-bag

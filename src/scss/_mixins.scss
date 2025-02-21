@@ -1,0 +1,21 @@
+@mixin icon-button($icon) {
+  width: 1.5rem;
+  height: 1.5rem;
+  background: url($icon) no-repeat center;
+  background-size: contain;
+  border: none;
+  cursor: pointer;
+}
+@mixin link-style($color, $position, $top, $right, $width, $height) {
+  background-color: $color;
+  position: $position;
+  width: $width;
+  height: $height;
+  top: $top;
+  right: $right;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+  gap: 5px;
+  box-shadow: 0 13px 20px -5px rgba(0, 0, 0, 0.3);
+}

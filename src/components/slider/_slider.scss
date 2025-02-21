@@ -1,0 +1,91 @@
+@use '../../scss/_variables';
+@use '../../scss/_mixins';
+.slider{
+  margin-top: 11.6rem;
+  margin-bottom: 13.4rem;
+  position: relative;
+  width: 100%;
+
+  .slider-container{
+    margin: 0 auto;
+    position: relative;
+    max-width: 112rem;
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
+    align-items: center;
+
+    .slider__banners{
+      width: 100%;
+      height: 70.2rem;
+      position: relative;
+      overflow: hidden;
+
+      .slider__banner{
+        position: absolute;
+        left: 0;
+        top: 0;
+        background-size: cover;
+        background-position: center;
+        background-repeat: no-repeat;
+        width: 100%;
+        height: 100%;
+        opacity: 0;
+        transition: opacity 0.8s ease-in-out;
+        &.active{
+          opacity: 1;
+          position: relative;
+        }
+      }
+    }
+    .slider__dots{
+      display: flex;
+      justify-content: center;
+      gap: 1rem;
+
+      .slider__dot{
+        display: inline-block;
+        width: 1.2rem;
+        height: 1.2rem;
+        background: variables.$dot-base-color;
+        border-radius: 50%;
+        cursor: pointer;
+        transition: background-color 0.3s ease, transform 0.3s ease;
+
+        &.active{
+          background-color: variables.$dot-active-color;
+          transform: scale(1.2);
+        }
+      }
+    }
+    .block-link{
+      padding: 0 2rem 2rem 2rem;
+      .block-link__title{
+        position: relative;
+        background-color: inherit;
+        font-size: 1.8rem;
+        text-transform: uppercase;
+        font-weight: 700;
+        width: 8rem;
+        line-height: 2.3rem;
+        &.title-parag{
+          width: 6.9rem;
+        }
+      }
+
+      .block-link__arrow{
+        position: relative;
+        background: url('/public/img/svg/arrow.svg') no-repeat;
+        width: 5.5rem;
+        height: 1.2rem;
+      }
+    }
+    .violet{
+      @include mixins.link-style(variables.$block-link-violet, absolute, 80px,-63px, 14.9rem, 20.4rem)
+    }
+    .purple{
+      @include mixins.link-style(variables.$block-link-purple, absolute, 359px,-181px, 15.9rem, 27.3rem)
+
+    }
+  }
+}

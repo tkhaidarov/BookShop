@@ -1,0 +1,9 @@
+- var links = [{name:"violet", text: "Change old book on new", url: "#" },{ name:"purple", text: "Top 100 books 2022", url: "#" }]
+section.slider
+    .slider-container
+        .slider__banners
+        .slider__dots
+        each link, index in links
+            a.block-link(class = link.name href=link.url)
+                p.block-link__title(class=(index ===1 ? 'title-parag':''))=link.text
+                .block-link__arrow

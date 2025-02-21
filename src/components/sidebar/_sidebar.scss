@@ -1,0 +1,64 @@
+@use '../../scss/_variables';
+@use '../../scss/_mixins';
+.category {
+  //display:block;
+  padding-top: 45px;
+  width: 28.5%;
+  height: 71rem;
+  transition: top 0.5s ease-in-out;
+  background: variables.$aside-background;
+  &.fixed{
+    left: 0;
+  }
+  *{
+    background:  none;
+  }
+  .category-container {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+
+    .category-list {
+      display: flex;
+      flex-direction: column;
+      gap: 2.3rem;
+
+      .category__item{
+        display: flex;
+        gap: 1.2rem;
+        align-items: center;
+        transition: transform 0.3s ease-in-out,font-weight 0.4s ease;
+        transform-origin: left;
+        cursor: pointer;
+        &:hover,
+        &.active{
+          transform: scale(1.2);
+          .category__name{
+            font-weight: 700 ;
+          }
+          .category__name--circle{
+            opacity: 1;
+          }
+        }
+        .category__name--circle{
+          display: inline-block;
+          width: 0.6rem;
+          height: 0.6rem;
+          border-radius: 50%;
+          background-color: #756ad3;
+          opacity: 0;
+          transition: opacity 0.3s ease;
+        }
+        .active-circle{
+          opacity: 1;
+        }
+        .category__name{
+          font-size: 1.2rem;
+          font-weight: 500;
+          width: 12.1rem;
+        }
+      }
+    }
+  }
+}
+
